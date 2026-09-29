@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Draw the roads, build the blocks: a pixel-art city card game." />
+    <meta name="theme-color" content="#1a1c2c" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="City Block" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <title>City Block</title>
+    <script type="module" crossorigin src="./assets/index-C0Gc716Y.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CI8U3OMA.css">
+  </head>
+  <body>
+    <section id="home" class="home">
+      <div class="home-inner">
+        <div id="skyline" class="skyline" aria-hidden="true"></div>
+        <h1 class="title">CITY<span>BLOCK</span></h1>
+        <p class="tagline">Draw the roads. Build the blocks.</p>
+
+        <div class="menu">
+          <button id="daily" class="big accent">
+            <span>Daily city</span>
+            <small id="daily-info"></small>
+          </button>
+          <button id="practice" class="big">
+            <span>Practice</span>
+            <small>A random deck</small>
+          </button>
+          <button class="big" data-rules>
+            <span>How to play</span>
+            <small>Rules and scoring</small>
+          </button>
+          <button id="install" class="big" hidden>
+            <span>Install app</span>
+            <small>Add City Block to your home screen</small>
+          </button>
+        </div>
+        <p id="ios-install" class="muted install-hint" hidden>
+          Play it like an app: tap <b>Share</b>, then <b>Add to Home Screen</b>.
+        </p>
+      </div>
+    </section>
+
+    <section id="play" class="play" hidden>
+      <header class="bar">
+        <button id="menu" class="small-btn">◀ Menu</button>
+        <span id="mode"></span>
+        <span id="score-now" class="score-now"></span>
+        <button class="small-btn" data-rules>? Rules</button>
+      </header>
+      <div class="layout">
+        <div class="board-wrap" id="board-wrap">
+          <canvas id="board"></canvas>
+        </div>
+        <aside class="side">
+          <div id="panel" class="panel"></div>
+          <div class="panel">
+            <h2>Still in the deck</h2>
+            <ul id="legend" class="legend"></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <dialog id="rules" class="rules" aria-labelledby="rules-title">
+      <div class="rules-head">
+        <h2 id="rules-title">How to play</h2>
+        <button class="small-btn" data-close aria-label="Close">✕</button>
+      </div>
+      <ol class="how">
+        <li>Draw <b>3 roads</b> on the empty lot, each up to <b>9 squares</b>. A road is one stroke that can bend, both ends must reach the <b>map edge</b> or <b>another road</b>, and once drawn it's final. Every road gets <b>sidewalks</b> along it, and the lot inside them becomes <b>city blocks</b>.</li>
+        <li>Cards are dealt <b>two at a time</b>, with a random <b>build area</b>: a 4×4 square or a 2-wide row or column. Build one card inside the area; the other is thrown away. <b>24 pairs</b> from a 48-card deck.</li>
+        <li>Buildings and parks go inside blocks. Hot dog carts and newsstands go on sidewalks. Taxis go on roads.</li>
+        <li>When the deck runs out, every tile scores. Plan for what's still to come.</li>
+      </ol>
+      <h2>Scoring</h2>
+      <ul id="rules-list" class="rules-list"></ul>
+    </dialog>
+
+    <button id="music" class="music-btn" aria-pressed="true">♪ ON</button>
+
+  </body>
+</html>
